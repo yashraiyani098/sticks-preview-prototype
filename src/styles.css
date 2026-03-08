@@ -1,0 +1,269 @@
+:root {
+  --bg: #0b1114;
+  --panel: #111b20;
+  --text: #ecf4f8;
+  --muted: #9ab0bf;
+  --brand: #12c2e9;
+  --brand-2: #f64f59;
+  --border: #1f313a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top right, #173543 0%, var(--bg) 40%);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #111923, #172d33, #26213d);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pill {
+  background: rgba(18, 194, 233, 0.16);
+  border: 1px solid rgba(18, 194, 233, 0.35);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.tab-bar {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.tab {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #15323c, #2d253d);
+  border-color: #2d5f73;
+}
+
+.internal-nav {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.subnav-group {
+  background: #0f171b;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.subnav-group strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #c8dee8;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid #2e4954;
+  background: #121d22;
+  color: #d9edf4;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.chip.active {
+  background: linear-gradient(135deg, #0f596e, #23395c);
+  border-color: #57bfd8;
+}
+
+.screen {
+  display: grid;
+  gap: 14px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.section-title p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.card-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.card-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-card {
+  background: linear-gradient(140deg, #0f1c20, #162c36);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.feature-card strong {
+  color: var(--accent);
+}
+
+.feature-card h3,
+.tile h3,
+.row h3 {
+  margin: 8px 0;
+}
+
+.tile,
+.row {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.tile.clickable {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.tile.clickable:hover {
+  transform: translateY(-2px);
+}
+
+.daily {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+input,
+select {
+  border-radius: 10px;
+  border: 1px solid #2f4650;
+  background: #0d1519;
+  color: var(--text);
+  padding: 10px;
+}
+
+.preview-block {
+  border-radius: 10px;
+  border: 1px dashed #3d5e6c;
+  padding: 12px;
+  background: #0b1317;
+  color: #b9f4ff;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand), #2f80ed);
+  color: #03131a;
+  font-weight: 700;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: linear-gradient(135deg, #f9d423, var(--brand-2));
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+ul {
+  margin: 8px 0;
+  padding-left: 18px;
+}
+
+.activity-list li {
+  margin: 6px 0;
+  color: #b9d1de;
+}
+
+@media (max-width: 900px) {
+  .tab-bar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-grid.three,
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .daily {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
